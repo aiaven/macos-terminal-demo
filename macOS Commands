@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Process Monitoring
+        run: ps aux
+
+      - name: CPU Monitoring
+        run: top -l 1 -n 5 -o cpu
+
+      - name: Memory Monitoring
+        run: vm_stat
